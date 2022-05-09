@@ -26,6 +26,7 @@ ssh_public_is_path  = true
 ssh_private_is_path = true
 script_name         = "./scripts/somescript.sh"
 script_args         = "arg1 arg2"
+exec_user           = "foobar"
 ########## PROVIDER SPECIFIC VARIABLES ##########
 ########## SAMPLE TFVAR FILE ##########
 ```
@@ -34,6 +35,7 @@ script_args         = "arg1 arg2"
 - Variable `script name` must contain either the full absolute or relative path combined with the name of the script
 - If script expects arguments, these should be passed on via variable `script_args` separated by spaces. 
   - As many arguments as required can be passed through this variable in the order the script requires them
+- If you want to use a different user for executing the script use the variable `exec_user`. If you want to use `opc` you can drop the usage of this variable. 
 
 ---
 ## Sample provider
@@ -95,6 +97,7 @@ No modules.
 | <a name="input_ssh_private_key"></a> [ssh\_private\_key](#input\_ssh\_private\_key) | Private key to log into machine | `any` | n/a | yes |
 | <a name="input_ssh_public_is_path"></a> [ssh\_public\_is\_path](#input\_ssh\_public\_is\_path) | Describes if SSH Public Key is located on file or inside code | `bool` | `false` | no |
 | <a name="input_ssh_public_key"></a> [ssh\_public\_key](#input\_ssh\_public\_key) | Defines SSH Public Key to be used in order to remotely connect to compute instance | `string` | n/a | yes |
+| <a name="exec_user"></a> [exec\_user](#input\_exec\_user) | User which will execute the script | `string` | `opc`| yes |
 
 ## Outputs
 

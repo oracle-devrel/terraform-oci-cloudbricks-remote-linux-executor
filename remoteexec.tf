@@ -9,7 +9,7 @@ resource "null_resource" "remote_executor" {
   connection {
     type        = "ssh"
     host        = var.linux_compute_private_ip
-    user        = "opc"
+    user        = var.exec_user
     private_key = var.ssh_private_is_path ? file(var.ssh_private_key) : var.ssh_private_key
   }
 
