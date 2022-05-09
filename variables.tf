@@ -43,5 +43,12 @@ variable "ssh_private_key" {
   description = "Private key to log into machine"
 
 }
+
+variable "exec_user" {
+  description = "User which will execute the script"
+  default = "opc"
+
+}
+
 /********** SSH Key Variables **********/
 /********** Brick Variables **********/
